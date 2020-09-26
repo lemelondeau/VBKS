@@ -78,10 +78,11 @@ initial hyper file: e.g., 'config/swiss_init_14/'
 
 
 #### Training
-0. modify configuration files and *.sh files, mkdir 'out/' in 'src/'
-1. exps_run_big.sh will call run_big_data.py, training on full data with multiple initial hypers or specified initial hypers
+1. Modify configuration files and *.sh files, 
+2. mkdir 'out/' in 'src/'
+3. exps_run_big.sh will call run_big_data.py, training on full data with multiple initial hypers or specified initial hypers
 
-2. exps_run_subsets_reuse_true.sh will call run_subsets_reuse_true.py, set random_seeds to get the results for multiple runs.
+4. exps_run_subsets_reuse_true.sh will call run_subsets_reuse_true.py, set random_seeds to get the results for multiple runs.
 
 **directory**: results will be save in result/working_folder (src/utils/parse_cfg.py generates working_folder name)
 
@@ -92,15 +93,15 @@ plot_rmse(): it will call kern_set_prob.py, BMA.py, plot_rmse.py in order. Chang
 
 compute_pk_large(): Changing of p(k) with the increasing od data size is plotted.
 
-Run from src/analyse/: python analyse_results.py
+Run from src/analyse/: python analyse_results.py.
 Remember to set the right configuration file.
 
 **directory**: working_folder/ana_res/, working_folder/plots_res/
 
 
 
-####Compare with BO
-1. Kernel selection with BO, run src/compare_BO/KernelSelectionBO.py. Remember to set the right configuration file.
+#### Compare with BO
+1. Kernel selection with BO, run src/compare_BO/KernelSelectionBO.py. Remember to set the right configuration file. Pre-trained results will be used to save time.
 2. Compare with VBKS, make sure plot_rmse() is done. Run src/compare_BO/plot_comparison.py. The plotted figure will be saved in full data working folder.
 
 
@@ -117,15 +118,15 @@ reuse_batch_sizes = np.zeros() means do not reuse parameters (but the result is 
 #### Analysis
 1. kern_set_prob.py, gather trained results from run_subsets_reuse_true, compute p(k),
         calls compute_prob_use_r.py
-2. BMA.py, get rmse
+2. BMA.py, compute BMA rmse
 3. plot_rmse.py, plot and record rmse of best kernel and BMA rmse, and time
 the results will be used to compare with BO
-4. iter_prob.py, use all the data, compute p(k) in the middle of training
-5. show_pk.py, plot p(k)
+4. show_pk.py, plot p(k)
+5. iter_prob.py, use all the data, compute p(k) in the middle of training
 
 ### Attention!
 
-!!! Don't run compute_prob_use_r.py in parallel... filename.txt will be changed.
+!!! Don't run multiple compute_prob_use_r.py in parallel... filename.txt will be changed.
 
 
 
