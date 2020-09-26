@@ -1,0 +1,6 @@
+#source('bks_install_bksgpR.R')
+library(bksgpR)
+library(optparse)
+source('bks_util.R')
+source('bks_data.R')
+source('bks_optim_global.R')

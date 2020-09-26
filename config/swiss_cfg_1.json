@@ -1,0 +1,27 @@
+{
+  "settings": {
+    "data_to_use": 200000,
+    "global_u_size": 400,
+    "local_u_size": 400,
+    "iter_num_full": 20000,
+    "iter_num_subset": 500,
+    "minibatch_size": 128,
+    "scale": 2000,
+    "test_size": 0.2,
+    "n_init": 1,
+    "ker_bracket": false,
+    "save_logger": false,
+    "Z_fixed": true,
+    "Z_reused": true,
+    "lik_reused": true,
+    "sub_mode" : "random",
+    "num_of_batch_per_subset": 30,
+    "num_of_subset": 30
+  },
+  "paths": {
+    "data_identifier": "swiss",
+    "datafile": "../datasets/swissgrid.csv",
+    "init_hyper_file" : "../config/swiss_init_14/",
+    "working_folder_suffix": "exp1"
+  }
+}

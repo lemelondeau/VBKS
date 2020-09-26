@@ -1,0 +1,27 @@
+{
+  "settings": {
+    "data_to_use": 1000000,
+    "global_u_size": 1000,
+    "local_u_size": 0,
+    "iter_num_full": 15000,
+    "iter_num_subset": 100,
+    "minibatch_size": 512,
+    "scale": 1,
+    "test_size": 0.02,
+    "n_init": 1,
+    "ker_bracket": true,
+    "save_logger": true,
+    "Z_fixed": true,
+    "Z_reused": true,
+    "lik_reused": true,
+    "sub_mode" : "random",
+    "num_of_batch_per_subset": 20,
+    "num_of_subset": 30
+  },
+  "paths": {
+    "data_identifier": "temper",
+    "datafile": "../datasets/temperature_1M.csv",
+    "init_hyper_file" : "../config/temper_init_14/",
+    "working_folder_suffix": "exp1"
+  }
+}
